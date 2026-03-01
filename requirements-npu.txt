@@ -1,0 +1,2 @@
+onnxruntime-vitisai>=1.17.0
+vai_q_onnx>=1.16.0

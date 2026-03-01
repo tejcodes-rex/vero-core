@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  vero-core-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - VERO_CORE_ENV=production
+      # - OMP_NUM_THREADS=4 # Uncomment to limit CPU usage on heavy edge nodes
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 1G
+    restart: unless-stopped
+    # If the edge server has an NPU or GPU, uncomment below to pass the device through
+    # devices:
+    #   - /dev/dri/renderD128:/dev/dri/renderD128

@@ -1,0 +1,36 @@
+vero_core:
+  version: "1.0.0"
+  
+hardware:
+  preferred_provider: "auto"  # auto | VitisAI | CUDA | CPU
+  vitis_ai_config: "engine_npu/vitis_ai_config.json"
+
+audio:
+  sample_rate: 16000
+  channels: 1
+  window_ms: 1000
+  hop_ms: 25
+  format: float32
+
+video:
+  fps: 15
+  frame_size: [224, 224]
+  window_frames: 10
+  
+detection:
+  threat_threshold: 0.80
+  consecutive_threat_frames: 1
+  weights:
+    audio: 1.00
+    video: 1.00
+    sync: 0.50
+  ema_alpha: 0.3
+  mouth_sync_threshold_ms: 350.0
+  spectral_jitter_threshold: 0.30
+  pixel_jitter_threshold: 0.50
+
+ui:
+  update_interval_ms: 200
+  alert_flash_hz: 2
+  alert_duration_s: 3
+  theme: "dark"

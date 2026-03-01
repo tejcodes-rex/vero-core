@@ -1,0 +1,17 @@
+{
+    "target": "DPU",
+    "fingerprint": "0x100000000000000",
+    "batch": 1,
+    "input_shape": [
+        1,
+        224,
+        224,
+        3
+    ],
+    "output_shape": [
+        1,
+        1
+    ],
+    "precision": "INT8",
+    "xdna_target": "XDNA2"
+}
